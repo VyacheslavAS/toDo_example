@@ -50,6 +50,7 @@
     "redux-devtools-log-monitor": "~1.0.5",
     "sass-loader": "~3.2.0",
     "style-loader": "~0.13.1",
+    "file-loader": "~0.8.5",
     "url-loader": "~0.5.7",
     "webpack": "~1.12.14",
     "webpack-config-plugin": "~0.3.1",

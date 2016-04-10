@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import store from '../store';
 import { Provider } from 'react-redux';
+import TodoPage from './TodoPage';
 
-export default class TodoPage extends Component {
+export default class Root extends Component {
     render() {
         return (
             <Provider store={store}>
                 <div>
-                    hello!
+                    <TodoPage />
                     {this.renderDevTools()}
                 </div>
             </Provider>

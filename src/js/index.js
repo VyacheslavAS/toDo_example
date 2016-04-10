@@ -1,6 +1,7 @@
 import 'babel-core/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TodoPage from './containers/TodoPage';
+import Root from './containers/Root';
+import 'css/style.scss';
 
-ReactDOM.render(<TodoPage />, document.getElementById('root'));
+ReactDOM.render(<Root />, document.getElementById('root'));

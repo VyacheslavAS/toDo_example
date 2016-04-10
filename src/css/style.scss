@@ -1,0 +1,13 @@
+.box-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.nowrap {
+    flex-wrap: nowrap;
+}
