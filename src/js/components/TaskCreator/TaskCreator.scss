@@ -12,9 +12,15 @@
         background: white;
         font-size: 13px;
         outline: none;
+        font-weight: 600;
+        color: gray;
 
         &:hover {
             border-color: $blueColor;
         }
+    }
+
+    .field {
+        margin-bottom: 20px;
     }
 }

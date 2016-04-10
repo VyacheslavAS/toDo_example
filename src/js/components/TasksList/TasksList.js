@@ -1,11 +1,36 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import TaskCard from './TaskCard';
 import cx from './TasksList.scss';
 
 export default class TasksList extends Component {
+    static propTypes = {
+        tasks: PropTypes.array,
+        updateTask: PropTypes.func.isRequired,
+        deleteTask: PropTypes.func.isRequired
+    }
+
+    static defaultProps = {
+        tasks: []
+    }
+
     render() {
+        const { tasks, updateTask, deleteTask } = this.props;
         return (
-            <div className={cx('box-col')}>
-                <h3>Your current tasks:</h3>
+            <div className={cx('box-col', 'tasks-list')}>
+                <h3 className={cx('header')}>Your current tasks:</h3>
+                { !tasks.length ?
+                    <span className={cx('no-tasks')}>You don't have any tasks</span> :
+                    tasks.map(task => {
+                        return (
+                            <TaskCard
+                                key={task.id}
+                                task={task}
+                                updateTask={updateTask}
+                                deleteTask={deleteTask}
+                            />
+                        );
+                    })
+                }
             </div>
         );
     }

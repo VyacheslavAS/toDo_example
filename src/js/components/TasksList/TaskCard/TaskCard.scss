@@ -1,0 +1,98 @@
+@import '~css/variables.scss';
+
+:local .task-card {
+    border: 1px solid $primaryColor;
+    border-radius: 5px;
+    padding: 7px;
+    margin-bottom: 10px;
+    
+    .check-box {
+        flex: 0 0 25px;
+        height: 25px;
+        border: 1px solid $primaryColor;
+        border-radius: 3px;
+        margin: 30px 20px 0 0;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+
+        .checked {
+            font-size: 33px;
+            font-weight: 900;
+        }
+    }
+    
+    .card-body { 
+        position: relative;
+        flex: 0 1 auto;
+        width: 100%;
+
+        .delete {
+            align-self: flex-end;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        .description {
+            margin-bottom: 10px;
+        }
+
+        .bottom-line {
+            justify-content: space-between;
+
+            .date {
+                flex: 0 0 auto;
+                opacity: 0.6;
+                line-height: 24px;
+            }
+
+            .btns-block {
+                width: 134px;
+            }
+
+            .action-btn {
+                border-radius: 5px;
+                border: 1px solid $borderColor;
+                cursor: pointer;
+                flex: 0 0 60px;
+                height: 24px;
+                align-self: flex-end;
+                background: white;
+                font-size: 13px;
+                outline: none;
+                font-weight: 600;
+                color: gray;
+                margin-left: 7px;
+
+                &:hover {
+                    border-color: $blueColor;
+                }
+            }
+        }
+
+        .finished {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+            align-items: center;
+            justify-content: center;
+            background: $borderColor;
+            opacity: 0.3;
+            z-index: 1;
+
+            .finished-text {
+                font-weight: 700;
+                font-size: 21px;
+                transform: rotate(-45deg);
+                flex: 0 0 56px;
+                color: #554343;
+                z-index: 2;
+            }
+        }
+    }
+}
