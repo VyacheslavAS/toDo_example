@@ -21,8 +21,8 @@ export const sortedTasksSelector = createDeepEqualSelector(
             const prev = rowPrev.title.trim().toLowerCase();
             const next = rowNext.title.trim().toLowerCase();
 
-            if (prev > next) return 1;
-            else if (prev < next) return -1;
+            if (prev < next) return 1;
+            else if (prev > next) return -1;
             else return 0;
         });
 
