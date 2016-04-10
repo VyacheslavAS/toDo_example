@@ -1,0 +1,76 @@
+{
+  "name": "ToDo_example",
+  "version": "0.0.1",
+  "description": "To do list",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint src/js",
+    "clean": "rimraf dist",
+    "build:production": "NODE_ENV=production webpack --config webpack.config.production.js"
+  },
+  "author": "Vyacheslav Sokolov <sokolov_vyacheclav@mail.ru> (https://github.com/VyacheslavAS)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "precommit": {
+    "run": [
+      "lint"
+    ],
+    "silent": false
+  },
+  "devDependencies": {
+    "postcss-loader": "~0.8.2",
+    "autoprefixer": "~6.3.5",
+    "babel-core": "~5.8.38",
+    "babel-eslint": "~4.1.8",
+    "babel-loader": "~5.4.0",
+    "babel-plugin-lodash": "0.2.0",
+    "babel-plugin-react-transform": "~1.1.1",
+    "classnames-loader": "~1.0.0",
+    "copy-webpack-plugin": "~0.2.0",
+    "css-loader": "~0.20.2",
+    "eslint": "~1.10.3",
+    "eslint-config-airbnb": "0.1.0",
+    "eslint-plugin-react": "~3.16.1",
+    "expose-loader": "~0.7.1",
+    "express": "~4.13.4",
+    "extract-text-webpack-plugin": "~0.9.1",
+    "html-webpack-plugin": "~2.14.0",
+    "imports-loader": "~0.6.5",
+    "node-sass": "~3.4.2",
+    "pre-commit": "~1.1.2",
+    "react-transform-catch-errors": "~1.0.2",
+    "react-transform-hmr": "~1.0.4",
+    "redbox-react": "~1.2.2",
+    "redux-devtools": "~3.1.1",
+    "redux-devtools-dock-monitor": "~1.1.0",
+    "redux-devtools-log-monitor": "~1.0.5",
+    "sass-loader": "~3.2.0",
+    "style-loader": "~0.13.1",
+    "url-loader": "~0.5.7",
+    "webpack": "~1.12.14",
+    "webpack-config-plugin": "~0.3.1",
+    "webpack-dev-middleware": "~1.6.1",
+    "webpack-hot-middleware": "~2.10.0"
+  },
+  "dependencies": {
+    "classnames": "~2.2.3",
+    "json-loader": "~0.5.4",
+    "lodash": "~3.10.1",
+    "react": "~0.14.7",
+    "react-dom": "~0.14.7",
+    "react-pure-render": "~1.0.2",
+    "react-redux": "~4.4.1",
+    "react-textarea-autosize": "~3.3.1",
+    "redux": "~3.3.1",
+    "redux-batched-subscribe": "~0.1.4",
+    "redux-combine-actions": "~0.1.2",
+    "redux-logger": "2.0.0",
+    "redux-promise-middleware": "~0.1.0",
+    "reselect": "~1.1.0",
+    "selectn": "~0.9.6"
+  }
+}
