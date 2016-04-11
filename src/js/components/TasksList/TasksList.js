@@ -16,8 +16,8 @@ export default class TasksList extends Component {
     render() {
         const { tasks, updateTask, deleteTask } = this.props;
         return (
-            <div className={cx('box-col', 'tasks-list')}>
-                <h3 className={cx('header')}>Your current tasks:</h3>
+            <section className={cx('box-col', 'tasks-list')}>
+                <h2 className={cx('header')}>Your current tasks:</h2>
                 { !tasks.length ?
                     <span className={cx('no-tasks')}>You don't have any tasks</span> :
                     tasks.map(task => {
@@ -31,7 +31,7 @@ export default class TasksList extends Component {
                         );
                     })
                 }
-            </div>
+            </section>
         );
     }
 }

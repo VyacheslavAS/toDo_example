@@ -1,6 +1,7 @@
 @import '~css/variables.scss';
 
 :local .task-card {
+    position: relative;
     border: 1px solid $primaryColor;
     border-radius: 5px;
     padding: 7px;
@@ -15,6 +16,7 @@
         cursor: pointer;
         align-items: center;
         justify-content: center;
+        z-index: 2;
 
         .checked {
             font-size: 33px;
@@ -23,7 +25,6 @@
     }
     
     .card-body { 
-        position: relative;
         flex: 0 1 auto;
         width: 100%;
 
@@ -32,7 +33,7 @@
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            z-index: 3;
+            z-index: 2;
         }
 
         .description {
@@ -43,7 +44,7 @@
             justify-content: space-between;
 
             .date {
-                flex: 0 0 auto;
+                flex: 0 1 auto;
                 opacity: 0.6;
                 line-height: 24px;
             }
@@ -71,28 +72,26 @@
                 }
             }
         }
+    }
 
-        .finished {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            border-radius: 5px;
-            align-items: center;
-            justify-content: center;
-            background: $borderColor;
-            opacity: 0.3;
-            z-index: 1;
+    .finished {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        align-items: center;
+        justify-content: center;
+        background: rgba(161, 157, 157, 0.3);;
+        z-index: 1;
 
-            .finished-text {
-                font-weight: 700;
-                font-size: 21px;
-                transform: rotate(-45deg);
-                flex: 0 0 56px;
-                color: #554343;
-                z-index: 2;
-            }
+        .finished-text {
+            font-weight: 700;
+            font-size: 21px;
+            transform: rotate(-45deg);
+            flex: 0 0 71px;
+            letter-spacing: 15px;
         }
     }
 }

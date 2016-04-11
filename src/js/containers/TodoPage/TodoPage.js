@@ -42,9 +42,13 @@ export default class TodoPage extends Component {
         const { tasks, createTask, updateTask, deleteTask } = this.props;
         return (
             <div className={cx('box-col', 'todo-page')}>
-                <h1>To do list</h1>
-                <TaskCreator createTask={createTask} />
-                <TasksList updateTask={updateTask} deleteTask={deleteTask} tasks={tasks}/>
+                <header>
+                    <h1>To do list</h1>
+                </header>
+                <main className="box-col">
+                    <TaskCreator createTask={createTask} />
+                    <TasksList updateTask={updateTask} deleteTask={deleteTask} tasks={tasks} />
+                </main>
             </div>
         );
     }

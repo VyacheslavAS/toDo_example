@@ -19,32 +19,38 @@ export default class TaskCard extends Component {
         const { task: { title, description, id, finished }, deleteTask } = this.props;
         const { isEditing } = this.state;
         return (
-            <div className={cx('box-row nowrap', 'task-card')}>
+            <article className={cx('box-row nowrap', 'task-card')}>
+                { finished &&
+                    <div className={cx('box-col', 'finished')}>
+                        <span className={cx('finished-text')}>Done</span>
+                    </div>
+                }
                 <div className={cx('box-row', 'check-box')} onClick={::this.handleFinishTask}>
                     {finished && <span className={cx('checked')}>+</span>}
                 </div>
                 <div className={cx('box-col', 'card-body')}>
                     <span className={cx('delete')} onClick={() => deleteTask(id)}>x</span>
-                    { finished &&
-                        <div className={cx('box-col', 'finished')}>
-                            <span className={cx('finished-text')}>D&nbsp;&nbsp;o&nbsp;&nbsp;n&nbsp;&nbsp;e</span>
-                        </div>
-                    }
                     <InputField
                         ref="title"
                         value={title}
                         readOnly={!isEditing}
                         className={cx('title')}
-                        style={{fontSize: '16px', fontWeight: 600}}
+                        style={{fontSize: '16px', fontWeight: 600, color: '#816E6E'}}
                      />
                     <TextareaField
                         ref="description"
                         value={description}
                         readOnly={!isEditing}
                         className={cx('description')}
+                        style={{color: '#816E6E'}}
                     />
                     <div className={cx('box-row nowrap', 'bottom-line')}>
-                        <span className={cx('date')}>Created: {moment(id).format('llll')}</span>
+                        <time
+                            dateTime={moment(id).format('YYYY-MM-DDThh:mm')}
+                            className={cx('date')}
+                        >
+                            Created: {moment(id).format('llll')}
+                        </time>
                         { !isEditing ?
                             <button className={cx('action-btn')} onClick={::this.toggleEditing}>Edit</button> :
                             <div className={cx('box-row nowrap', 'btns-block')}>
@@ -54,7 +60,7 @@ export default class TaskCard extends Component {
                         }
                     </div>
                 </div>
-            </div>
+            </article>
         );
     }
 
