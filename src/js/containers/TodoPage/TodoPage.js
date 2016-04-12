@@ -27,7 +27,7 @@ export default class TodoPage extends Component {
         const { setTasks, setTasksToStorage } = this.props;
         const jsonTasks = localStorage.getItem('tasks');
 
-        if (jsonTasks !== 'undefined') setTasks(JSON.parse(jsonTasks));
+        if (jsonTasks && jsonTasks !== 'undefined') setTasks(JSON.parse(jsonTasks));
 
         window.addEventListener('beforeunload', setTasksToStorage, false);
 
